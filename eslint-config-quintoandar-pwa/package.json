@@ -1,12 +1,12 @@
 {
   "name": "eslint-config-quintoandar-pwa",
   "description": "ESLint Shareable Config for QuintoAndar's PWAs",
-  "homepage": "https://github.com/quintoandar/web-contribtree/master/eslint-config-quintoandar-pwa",
-  "version": "1.0.0-alpha.0",
+  "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-pwa#readme",
+  "version": "1.0.0",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/quintoandar/web-contrib"
+    "url": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-pwa"
   },
   "scripts": {
     "lint": "eslint . --config=eslintrc.json"
@@ -25,5 +25,12 @@
   },
   "engines": {
     "node": ">= 8"
-  }
+  },
+  "keywords": [
+    "eslint",
+    "sharable-config",
+    "quintoandar",
+    "PWA"
+  ],
+  "license": "ISC"
 }

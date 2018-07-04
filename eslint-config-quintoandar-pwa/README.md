@@ -2,6 +2,12 @@
 
 This package provides QuintoAndar's .eslintrc for PWA as an extensible shared config.
 
+## Install
+
+```shell
+  npm install --S eslint-config-quintoandar-pwa
+```
+
 ## Usage
 
 In your project, create a file `.eslintrc.json` and extends this project:

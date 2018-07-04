@@ -2,6 +2,12 @@
 
 This package provides QuintoAndar's .eslintrc for PWA as an extensible shared config.
 
+## Install
+
+```shell
+  npm install --S eslint-config-quintoandar-base
+```
+
 ## Usage
 
 In your project, create a file `.eslintrc.json` and extends this project:
@@ -14,4 +20,4 @@ In your project, create a file `.eslintrc.json` and extends this project:
 
 ## What configs and rules?
 
-We extends Airbnb's base configs and add new rules specific to QuintoAndar's node projects.
+We extends Airbnb's base configs and add new rules specific to QuintoAndar's PWA projects.
