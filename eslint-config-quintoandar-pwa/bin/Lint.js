@@ -30,7 +30,7 @@ if (!eslint) {
 }
 
 const command =
-  [eslint, '-c', path.join(__dirname, '../.eslintrc')]
+  [eslint, '-c', path.join(__dirname, '../index.js')]
     .concat(process.argv.slice(2))
     .join(' ')
 
