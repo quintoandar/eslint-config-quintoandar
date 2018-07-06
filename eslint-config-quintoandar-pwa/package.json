@@ -11,6 +11,9 @@
   "scripts": {
     "lint": "eslint . --config=eslintrc.json"
   },
+  "bin": {
+    "eslint": "bin/lint.js"
+  },
   "devDependencies": {
     "eslint": "3.11.1",
     "eslint-config-airbnb": "13.0.0",

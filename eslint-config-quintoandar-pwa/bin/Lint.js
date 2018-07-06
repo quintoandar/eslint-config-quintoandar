@@ -12,7 +12,7 @@ const options = [
   path.join(__dirname, '../../.bin/eslint')
 ]
 
-const eslint;
+let eslint;
 for (const i = 0; i < options.length; i++) {
   try {
     fs.statSync(options[i])
@@ -35,7 +35,7 @@ const command =
     .join(' ')
 
 try {
-  execSync(command, {stdio: [0, 1, 2]})
+  execSync(command, { stdio: [0, 1, 2] })
 }
 catch (e) {
   process.exit(1)
