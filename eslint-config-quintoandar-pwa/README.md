@@ -64,6 +64,7 @@ Please read [CONTRIBUTING.md](../CONTRIBUTING.md) for details on our code of con
 
 ## Roadmap
 
+- [ ] Add rules or plugin to validate jest (for example: eslint-plugin-jest)
 - [ ] Check to verify that everytime we have `async` method there is an `await` invocation
 - [ ] Lint rule to prevent using " !important " on css rules
 - [ ] Enforce to do not use dispatch inside components folder or inside react component in containers folder (#newRule)

@@ -16,11 +16,11 @@ module.exports = {
     ERROR,
     'always-multiline'
   ],
-  'indent': [
+  indent: [
     ERROR,
     ERROR,
     {
-      'SwitchCase': WARN,
+      SwitchCase: WARN,
     }
   ],
   'max-len': [
@@ -28,7 +28,7 @@ module.exports = {
     120,
     ERROR,
     {
-      'ignoreUrls': true
+      ignoreUrls: true
     }
   ],
   'newline-per-chained-call': OFF,
@@ -42,4 +42,4 @@ module.exports = {
   ...importRules,
   ...reactRules,
   ...jsxRules,
-}
+};

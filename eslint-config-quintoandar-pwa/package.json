@@ -9,7 +9,7 @@
     "url": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-pwa"
   },
   "scripts": {
-    "lint": "eslint . --config=eslintrc.json"
+    "lint": "eslint ."
   },
   "peerDependencies": {
     "eslint": "3.11.1",

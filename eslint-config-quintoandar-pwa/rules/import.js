@@ -9,4 +9,4 @@ module.exports = {
   'import/no-unresolved': ERROR,
   'import/prefer-default-export': OFF,
   'import/no-webpack-loader-syntax': OFF,
-}
+};

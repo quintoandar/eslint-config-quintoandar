@@ -6,4 +6,4 @@ const CONFIG_RULES = {
 
 module.exports = {
   CONFIG_RULES,
-}
+};

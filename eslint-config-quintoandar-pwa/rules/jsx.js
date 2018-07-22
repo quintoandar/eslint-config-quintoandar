@@ -8,4 +8,4 @@ module.exports = {
   'jsx-a11y/mouse-events-have-key-events': ERROR,
   'jsx-a11y/role-has-required-aria-props': ERROR,
   'jsx-a11y/role-supports-aria-props': ERROR,
-}
+};
