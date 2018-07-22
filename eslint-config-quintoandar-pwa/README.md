@@ -40,6 +40,18 @@ In your project, create a file `.eslintrc.json` and extends this project:
 
 We extends Airbnb's configs and add new rules specific to QuintoAndar's PWA projects.
 
+## Roadmap
+
+- [ ] Check to verify that everytime we have `async` method there is an `await` invocation
+- [ ] Lint rule to prevent using " !important " on css rules
+- [ ] Enforce to do not use dispatch inside components folder or inside react component in containers folder (#newRule)
+- [ ] Quantity of lines + Line lenght
+- [ ] Create lint rule to force a comment justifying Lint suppressions (#newRule)
+- [ ] Lint rule to deprecate function binding in favor of Class properties with arrow functions
+- [ ] Object destructing limit
+- [ ] Libraries imports ordering
+- [ ] Put custom of goBack (react-router)
+
 ## Badges
 ![eslint-config-quintoandar-pwa-badge]
 
@@ -50,12 +62,3 @@ Add the following line in your markdown readme:
 ```md
 ![eslint-config-quintoandar-pwa-badge](https://img.shields.io/badge/code%20style-eslint--config--quintoandar--pwa-5063f0.svg)
 ```
-
-## Roadmap
-
-- [ ] Enforce to do not use dispatch inside components folder or inside react component in containers folder
-- [ ] Quantity of lines + Line lenght
-- [ ] Object destructing limit
-- [ ] Libraries imports ordering
-- [ ] ..
-
