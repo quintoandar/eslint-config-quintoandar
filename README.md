@@ -12,6 +12,11 @@
 There're two packages of sharable config in this repository:
 
 > QuintoAndar JavaScript Style Guide = () => {
+>
+> In code, as in ice skating, style counts. **Legibility, consistency, and team harmony** are all benefits of embracing the pedantic pursuit of rules. More than any of these benefits, however, a well defined style guide can help us avoid common pitfalls and keep our **code reviews** far far away from the bikeshed and focussed on actual **software design**. ([Fonte](https://alligator.io/workflow/eslint-config-syndication/))
+>
+> }
+
 
 ## eslint-config-quintoandar-base ![eslint-config-quintoandar-base]
 [eslint-config-quintoandar-base]: https://img.shields.io/badge/code%20style-eslint--config--quintoandar--base-5063f0.svg
