@@ -5,10 +5,10 @@ module.exports = {
   extends: 'airbnb',
 
   env: {
-    'browser': true,
-    'node': true,
-    'jest': true,
-    'es6': true
+    browser: true,
+    node: true,
+    jest: true,
+    es6: true
   },
 
   plugins: [
@@ -17,12 +17,12 @@ module.exports = {
   ],
 
   parserOptions: {
-    'ecmaVersion': 6,
-    'sourceType': 'module',
-    'ecmaFeatures': {
-      'jsx': true
+    ecmaVersion: 6,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
     }
   },
 
   rules,
-}
+};

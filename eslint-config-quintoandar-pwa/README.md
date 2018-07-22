@@ -10,6 +10,8 @@
     * [Install](#install)
       * [Install peer dependencies](#install-peer-dependencies)
     * [Usage](#usage)
+    * [Running local lint](#running-local-lint)
+    * [Running local test](#running-local-test)
 * [What configs and rules ?](#what-configs-and-rules-)
 * [Versioning](#versioning)
 * [Contributing](#contributing)
@@ -50,6 +52,22 @@ In your project, create a file `.eslintrc.json` and extends this project:
 }
 ```
 
+### Running local lint
+
+Just run:
+
+```shell
+npm run lint
+```
+
+### Running local test
+
+Just run:
+
+```shell
+npm run test
+```
+
 ## What configs and rules ?
 
 We extends Airbnb's configs and add new rules specific to QuintoAndar's PWA projects.
@@ -64,6 +82,7 @@ Please read [CONTRIBUTING.md](../CONTRIBUTING.md) for details on our code of con
 
 ## Roadmap
 
+- [ ] Add rules or plugin to validate jest (for example: [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest))
 - [ ] Check to verify that everytime we have `async` method there is an `await` invocation
 - [ ] Lint rule to prevent using " !important " on css rules
 - [ ] Enforce to do not use dispatch inside components folder or inside react component in containers folder (#newRule)

@@ -13,8 +13,8 @@ module.exports = {
   'react/jsx-no-bind': [
     ERROR,
     {
-      'allowArrowFunctions': false,
-      'allowBind': false
+      allowArrowFunctions: false,
+      allowBind: false
     }
   ],
-}
+};
