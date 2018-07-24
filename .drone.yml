@@ -1,0 +1,42 @@
+pipeline:
+  install-pwa:
+    group: install
+    image: node:8.9.4
+    commands:
+      - cd eslint-config-quintoandar-pwa
+      - npm install --quiet
+
+  # install-base:
+  #   group: install
+  #   image: node:8.9.4
+  #   commands:
+  #     - cd eslint-config-quintoandar-base
+  #     - npm install --quiet
+
+  lint-pwa:
+    group: build
+    image: node:8.9.4
+    commands:
+      - cd eslint-config-quintoandar-pwa
+      - npm run lint --unsafe-perm --quiet
+
+  # lint-base:
+  #   group: build
+  #   image: node:8.9.4
+  #   commands:
+  #     - cd eslint-config-quintoandar-base
+  #     - npm run lint --unsafe-perm --quiet
+
+  test-pwa:
+    group: build
+    image: node:8.9.4
+    commands:
+      - cd eslint-config-quintoandar-pwa
+      - npm run test --quiet
+
+  # test-base:
+  #   group: build
+  #   image: node:8.9.4
+  #   commands:
+  #     - cd eslint-config-quintoandar-base
+  #     - npm run test --quiet
