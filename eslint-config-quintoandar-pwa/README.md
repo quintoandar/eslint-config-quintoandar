@@ -1,4 +1,7 @@
-# eslint-config-quintoandar-pwa
+<div align="center">
+  <img width="450" height="76" vspace="" hspace="25" src="../eslint-config-quintoandar.png">
+  <h1>eslint-config-quintoandar-pwa</h1>
+</div>
 
 [![npm](https://img.shields.io/npm/v/eslint-config-quintoandar-pwa.svg)](https://www.npmjs.com/package/eslint-config-quintoandar-pwa) 
 [![npm](https://img.shields.io/npm/dw/eslint-config-quintoandar-pwa.svg)](https://www.npmjs.com/package/eslint-config-quintoandar-pwa)
