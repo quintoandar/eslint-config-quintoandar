@@ -3,6 +3,7 @@
   <h1>eslint-config-quintoandar-pwa</h1>
 </div>
 
+[![Build Status](https://drone.quintoandar.com.br/api/badges/quintoandar/eslint-config-quintoandar/status.svg?branch=master)](https://drone.quintoandar.com.br/quintoandar/eslint-config-quintoandar)
 [![npm](https://img.shields.io/npm/v/eslint-config-quintoandar-pwa.svg)](https://www.npmjs.com/package/eslint-config-quintoandar-pwa) 
 [![npm](https://img.shields.io/npm/dw/eslint-config-quintoandar-pwa.svg)](https://www.npmjs.com/package/eslint-config-quintoandar-pwa)
 ![eslint-config-quintoandar-pwa-badge]

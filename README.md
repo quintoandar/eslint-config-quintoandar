@@ -6,6 +6,7 @@
   <p>Packages of eslint sharable configs by QuintoAndar</p>
 </div>
 
+![Build Status](https://drone.quintoandar.com.br/api/badges/quintoandar/eslint-config-quintoandar/status.svg?branch=master)
 ![license](https://img.shields.io/badge/license-ISC-brightgreen.svg)
 [![npm](https://img.shields.io/npm/dw/eslint-config-quintoandar-pwa.svg)](https://www.npmjs.com/package/eslint-config-quintoandar-pwa)
 
