@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="450" height="76" vspace="" hspace="25" src="../eslint-config-quintoandar.png">
+  <img width="450" height="76" vspace="" hspace="25" src="https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-config-quintoandar.png?raw=true">
   <h1>eslint-config-quintoandar-pwa</h1>
 </div>
 
