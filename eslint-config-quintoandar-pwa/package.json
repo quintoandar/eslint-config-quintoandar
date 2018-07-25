@@ -24,6 +24,7 @@
     "test:watch": "jest --watchAll"
   },
   "peerDependencies": {
+    "babel-eslint": "^8.2.6",
     "eslint": "3.11.1",
     "eslint-config-airbnb": "13.0.0",
     "eslint-config-airbnb-base": "10.0.1",
@@ -33,6 +34,7 @@
     "eslint-plugin-react": "6.7.1"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "eslint": "3.11.1",
     "eslint-config-airbnb": "13.0.0",
     "eslint-config-airbnb-base": "10.0.1",

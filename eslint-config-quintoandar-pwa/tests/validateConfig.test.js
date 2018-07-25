@@ -4,7 +4,7 @@ describe('load config in eslint to validate all rule syntax is correct', () => {
   const cli = new CLIEngine({
     useEslintrc: false,
     configFile: '.eslintrc'
-  })
+  });
 
   const validate = (codeText) => cli.executeOnText(codeText);
 
