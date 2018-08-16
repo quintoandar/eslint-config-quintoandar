@@ -20,12 +20,12 @@ pipeline:
       - cd eslint-config-quintoandar-pwa
       - npm run lint --unsafe-perm --quiet
 
-  lint-plugin:
-    group: build
-    image: node:8.9.4
-    commands:
-      - cd eslint-plugin-quintoandar-internal
-      - npm run lint --unsafe-perm --quiet
+  # lint-plugin:
+  #   group: build
+  #   image: node:8.9.4
+  #   commands:
+  #     - cd eslint-plugin-quintoandar-internal
+  #     - npm run lint --unsafe-perm --quiet
 
   test-pwa:
     group: build

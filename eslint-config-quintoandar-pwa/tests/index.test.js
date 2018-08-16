@@ -20,7 +20,7 @@ describe('Eslint shareable config', () => {
   });
 
   it('plugins should have correct array value', () => {
-    expect(config.plugins).toEqual(['react', 'jsx-a11y']);
+    expect(config.plugins).toEqual(['react', 'jsx-a11y', 'quintoandar-internal']);
   });
 
   it('parserOptions should have correct object value', () => {
