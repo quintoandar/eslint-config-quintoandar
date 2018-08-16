@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-internal",
+  "name": "eslint-plugin-quintoandar-internal",
   "version": "1.0.0",
   "description": "An eslint-plugin for PWA-Tenants custom rules",
   "main": "index.js",

@@ -32,7 +32,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.7.1",
-    "eslint-plugin-internal": "file:../eslint-plugin-internal"
+    "eslint-plugin-quintoandar-internal": "file:../eslint-plugin-quintoandar-internal"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
@@ -43,6 +43,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.7.1",
+    "eslint-plugin-quintoandar-internal": "file:../eslint-plugin-quintoandar-internal",
     "jest": "^23.4.1"
   },
   "jest": {
