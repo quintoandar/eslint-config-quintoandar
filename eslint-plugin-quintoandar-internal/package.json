@@ -1,0 +1,34 @@
+{
+  "name": "eslint-plugin-quintoandar-internal",
+  "version": "1.0.0",
+  "description": "An eslint-plugin for PWA-Tenants custom rules",
+  "main": "index.js",
+  "scripts": {
+    "coveralls": "cat ./reports/coverage/lcov.info | coveralls",
+    "test": "npm run unit-test",
+    "unit-test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha **/tests/**/*.js -- --reporter dot"
+  },
+  "files": [
+    "index.js",
+    "rules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-plugin-quintoandar-internal"
+  },
+  "keywords": [
+    "eslint plugin",
+    "custom rules",
+    "eslint"
+  ],
+  "author": "Quinto Andar",
+  "license": "MIT",
+  "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-plugin-quintoandar-internal#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.18.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.1"
+  }
+}
