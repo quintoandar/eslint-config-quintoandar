@@ -4,7 +4,7 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
-const rule = require('../rules/no-typo-components');
+const rule = require('../no-typo-components');
 const RuleTester = require('eslint').RuleTester;
 
 const parserOptions = {

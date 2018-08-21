@@ -4,7 +4,7 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
-const rule = require('../rules/no-target-blank');
+const rule = require('../no-target-blank');
 const RuleTester = require('eslint').RuleTester;
 
 const parserOptions = {
