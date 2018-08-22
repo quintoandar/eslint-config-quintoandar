@@ -1,4 +1,5 @@
 const rules = require('./rules/index');
+const plugin = require('./eslint-plugin-quintoandar-internal');
 
 module.exports = {
   parser: 'babel-eslint',
@@ -14,7 +15,7 @@ module.exports = {
   plugins: [
     'react',
     'jsx-a11y',
-    'quintoandar-internal',
+    plugin,
   ],
 
   parserOptions: {
