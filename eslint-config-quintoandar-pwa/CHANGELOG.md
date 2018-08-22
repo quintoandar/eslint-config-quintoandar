@@ -2,9 +2,13 @@
 
 ## master
 
-### Features
+--
 
-- Add eslint custom rules as internal plugin [#14](https://github.com/quintoandar/eslint-config-quintoandar/pull/14)
+## 2.0.0 - Custom rules with plugin-quintoandar
+
+### Breaking change
+
+- Add eslint custom rules with quintoandar plugin as new peer dep [#14](https://github.com/quintoandar/eslint-config-quintoandar/pull/14) [#18](https://github.com/quintoandar/eslint-config-quintoandar/pull/18)
 
 ### Fixes
 
