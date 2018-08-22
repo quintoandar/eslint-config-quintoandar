@@ -1,6 +1,6 @@
 <div align="center">
   <img width="450" height="76" vspace="" hspace="25" src="https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-config-quintoandar.png?raw=true">
-  <h1>eslint-plugin-quintoandar-internal</h1>
+  <h1>eslint-plugin-quintoandar</h1>
 </div>
 
 ## Table of Contents
@@ -25,14 +25,14 @@ These custom rules can be used in two ways:
 #### Install
 
 ```js
-"eslint-plugin-quintoandar-internal": "file:../eslint-plugin-quintoandar-internal"
+"eslint-plugin-quintoandar": "file:../eslint-plugin-quintoandar"
 ```
 
 #### Usage
 
 ```js
   "plugins": [
-    "quintoandar-internal"
+    "quintoandar"
   ],
 ```
 
@@ -47,7 +47,7 @@ Do not allow the usage of the method `goBack` directly imported by the lib. Enfo
 Just add the code below in your rules array:
 
 ```js
-"quintoandar-internal/go-back-needs-fallback": 2,
+"quintoandar/go-back-needs-fallback": 2,
 ```
 
 ### No target blank
@@ -71,7 +71,7 @@ Create a new custom rule is also a way to move from the deprecated approach to n
 Just add the code below in your rules array
 
 ```js
-"quintoandar-internal/no-typo-components": 2,
+"quintoandar/no-typo-components": 2,
 ```
 
 ## Contributing
@@ -79,3 +79,7 @@ Just add the code below in your rules array
 Please read [CONTRIBUTING.md](../CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 Plus: Always to remember to update this readme when adding a new custom rule.
+
+### How to write a new custom rule
+
+Ref: https://medium.com/@btegelund/creating-an-eslint-plugin-87f1cb42767f
