@@ -73,7 +73,7 @@ Just add the code below in your rules array
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [CHANGELOG.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-config-quintoandar-pwa/CHANGELOG.md)
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [CHANGELOG.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-plugin-quintoandar/CHANGELOG.md)
 
 
 ## Contributing
