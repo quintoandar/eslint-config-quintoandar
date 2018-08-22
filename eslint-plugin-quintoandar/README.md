@@ -76,7 +76,7 @@ Please read [CONTRIBUTING.md](../CONTRIBUTING.md) for details on our code of con
 
 ### How to write a new custom rule
 
-Just go to `/rules` folder, create a new file and export as default one function receving `context` and write the condition.
+Just go to `/rules` folder, create a new file and export as default one function receiving `context` and write the condition.
 
 ```js
 module.exports = function(context) {
