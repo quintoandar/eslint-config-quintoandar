@@ -41,6 +41,6 @@ const rules = {
   'require-yield': OFF,
 };
 
-const concatanedRules = Object.assign(rules, importRules, reactRules, jsxRules);
+const concatenatedRules = Object.assign({}, rules, importRules, reactRules, jsxRules);
 
-module.exports = concatanedRules;
+module.exports = concatenatedRules;
