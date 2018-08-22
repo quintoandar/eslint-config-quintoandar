@@ -2,6 +2,8 @@
 
 ## master
 
+## 1.0.1 - Fixes in readme
+
 ### Fixes
 
 - Update readme
