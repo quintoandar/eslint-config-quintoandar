@@ -3,7 +3,7 @@ const reactRules = require('./react');
 const jsxRules = require('./jsx');
 const { OFF, WARN, ERROR } = require('./constants').CONFIG_RULES;
 
-module.exports = {
+const rules = {
   'arrow-parens': [
     'error',
     'always'
@@ -39,7 +39,8 @@ module.exports = {
   'prefer-template': ERROR,
   'class-methods-use-this': OFF,
   'require-yield': OFF,
-  ...importRules,
-  ...reactRules,
-  ...jsxRules,
 };
+
+const concatenatedRules = Object.assign({}, rules, importRules, reactRules, jsxRules);
+
+module.exports = concatenatedRules;

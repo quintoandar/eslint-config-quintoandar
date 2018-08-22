@@ -4,11 +4,13 @@
 
 ### Features
 
---
+- Add eslint custom rules as internal plugin [#14](https://github.com/quintoandar/eslint-config-quintoandar/pull/14)
 
 ### Fixes
 
 - Fix image ref in npm readme [#12](https://github.com/quintoandar/eslint-config-quintoandar/pull/12)
+
+- Fix vscode error to read `.eslintrc` with spread operator [#16](https://github.com/quintoandar/eslint-config-quintoandar/pull/16)
 
 ### Chore & Maintenance
 
