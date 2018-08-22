@@ -7,6 +7,7 @@
 
 * [Getting start](#getting-start)
 * [Rules](#rules)
+* [Versioning](#versioning)
 * [Contributing](#contributing)
 
 ## Getting start
@@ -70,9 +71,14 @@ Just add the code below in your rules array
 "quintoandar/no-typo-components": 2,
 ```
 
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [CHANGELOG.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-config-quintoandar-pwa/CHANGELOG.md)
+
+
 ## Contributing
 
-Please read [CONTRIBUTING.md](../CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ### How to write a new custom rule
 
@@ -82,7 +88,7 @@ Just go to `/rules` folder, create a new file and export as default one function
 module.exports = function(context) {
   return {
     ....
-    context.report({ /*... somethong */ })
+    context.report({ /*... something */ })
   }
 }
 ```

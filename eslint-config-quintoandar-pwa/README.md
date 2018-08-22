@@ -78,11 +78,11 @@ We extends Airbnb's configs and add new rules specific to QuintoAndar's PWA proj
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [CHANGELOG.md](CHANGELOG.md)
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [CHANGELOG.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-config-quintoandar-pwa/CHANGELOG.md)
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](../CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Roadmap
 
