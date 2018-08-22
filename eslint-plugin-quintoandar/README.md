@@ -1,6 +1,6 @@
 <div align="center">
   <img width="450" height="76" vspace="" hspace="25" src="https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-config-quintoandar.png?raw=true">
-  <h1>eslint-plugin-quintoandar-internal</h1>
+  <h1>eslint-plugin-quintoandar</h1>
 </div>
 
 ## Table of Contents
@@ -25,30 +25,26 @@ These custom rules can be used in two ways:
 #### Install
 
 ```js
-"eslint-plugin-quintoandar-internal": "file:../eslint-plugin-quintoandar-internal"
+npm install --save-dev eslint-plugin-quintoandar
 ```
 
 #### Usage
 
 ```js
   "plugins": [
-    "quintoandar-internal"
+    "quintoandar"
+  ],
+```
+
+or
+
+```js
+  "plugins": [
+    "eslint-plugin-quintoandar"
   ],
 ```
 
 ## Rules
-
-### Go back needs a fallback
-
-Do not allow the usage of the method `goBack` directly imported by the lib. Enforce always use a goBack with fallback.
-
-#### How to use it
-
-Just add the code below in your rules array:
-
-```js
-"quintoandar-internal/go-back-needs-fallback": 2,
-```
 
 ### No target blank
 
@@ -71,11 +67,31 @@ Create a new custom rule is also a way to move from the deprecated approach to n
 Just add the code below in your rules array
 
 ```js
-"quintoandar-internal/no-typo-components": 2,
+"quintoandar/no-typo-components": 2,
 ```
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](../CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-Plus: Always to remember to update this readme when adding a new custom rule.
+### How to write a new custom rule
+
+Just go to `/rules` folder, create a new file and export as default one function receiving `context` and write the condition.
+
+```js
+module.exports = function(context) {
+  return {
+    ....
+    context.report({ /*... somethong */ })
+  }
+}
+```
+
+In order to make it easy, there're two interesting tools:
+
+- [Eslint rules generator](https://github.com/eslint/generator-eslint)
+- [AST explorer](https://astexplorer.net/) to help verify how to get what you need;
+
+**Plus**: Always to remember to update this readme and create unit tests when adding a new custom rule.
+
+Reference: https://medium.com/@btegelund/creating-an-eslint-plugin-87f1cb42767f

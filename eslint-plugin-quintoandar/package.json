@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-quintoandar-internal",
+  "name": "eslint-plugin-quintoandar",
   "version": "1.0.0",
   "description": "An eslint-plugin for PWA-Tenants custom rules",
   "main": "index.js",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-plugin-quintoandar-internal"
+    "url": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-plugin-quintoandar"
   },
   "keywords": [
     "eslint plugin",
@@ -23,7 +23,7 @@
   ],
   "author": "Quinto Andar",
   "license": "MIT",
-  "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-plugin-quintoandar-internal#readme",
+  "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-plugin-quintoandar#readme",
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "coveralls": "^3.0.0",

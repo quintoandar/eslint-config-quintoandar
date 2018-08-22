@@ -10,7 +10,7 @@ pipeline:
     group: install
     image: node:8.9.4
     commands:
-      - cd eslint-plugin-quintoandar-internal
+      - cd eslint-plugin-quintoandar
       - npm install --quiet
 
   lint-pwa:
@@ -19,13 +19,6 @@ pipeline:
     commands:
       - cd eslint-config-quintoandar-pwa
       - npm run lint --unsafe-perm --quiet
-
-  # lint-plugin:
-  #   group: build
-  #   image: node:8.9.4
-  #   commands:
-  #     - cd eslint-plugin-quintoandar-internal
-  #     - npm run lint --unsafe-perm --quiet
 
   test-pwa:
     group: build
@@ -38,5 +31,5 @@ pipeline:
     group: build
     image: node:8.9.4
     commands:
-      - cd eslint-plugin-quintoandar-internal
+      - cd eslint-plugin-quintoandar
       - npm run test --quiet
