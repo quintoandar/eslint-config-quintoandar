@@ -38,6 +38,14 @@ github package: [/eslint-config-quintoandar-pwa](/eslint-config-quintoandar-pwa/
 
 npm package: [https://www.npmjs.com/package/eslint-config-quintoandar-pwa](https://www.npmjs.com/package/eslint-config-quintoandar-pwa)
 
+## eslint-plugin-quintoandar
+
+Custom rules available by eslint plugin
+
+github package: [/eslint-plugin-quintoandar](/eslint-plugin-quintoandar/)
+
+npm package: [https://www.npmjs.com/package/eslint-plugin-quintoandar](https://www.npmjs.com/package/eslint-plugin-quintoandar)
+
 ## Contributing
 
 Contributions are welcome! Read the [contribution] guidelines first.
