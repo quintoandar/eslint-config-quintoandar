@@ -7,7 +7,7 @@ describe('Eslint shareable config', () => {
   });
 
   it('parser should have correct value', () => {
-    expect(config.extends).toBe('airbnb');
+    expect(config.extends).toEqual(['airbnb', 'quintoandar-base']);
   });
 
   it('env should have correct object value', () => {
