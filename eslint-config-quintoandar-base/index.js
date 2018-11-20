@@ -2,20 +2,9 @@ const rules = require('./rules/index');
 
 module.exports = {
   parser: 'babel-eslint',
-  extends: [
-    'airbnb',
-    'quintoandar-base'
-  ],
-
-  env: {
-    browser: true,
-    node: true,
-    jest: true,
-    es6: true
-  },
+  extends: 'airbnb-base',
 
   plugins: [
-    'react',
     'jsx-a11y',
     'quintoandar'
   ],
@@ -23,9 +12,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true
-    }
   },
 
   rules,
