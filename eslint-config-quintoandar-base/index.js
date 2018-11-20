@@ -2,11 +2,9 @@ const rules = require('./rules/index');
 
 module.exports = {
   parser: 'babel-eslint',
-  extends: 'airbnb-base',
-
-  plugins: [
-    'jsx-a11y',
-    'quintoandar'
+  extends: [
+    'eslint:recommended',
+    'airbnb-base',
   ],
 
   parserOptions: {

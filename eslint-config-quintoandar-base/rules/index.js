@@ -31,8 +31,8 @@ const rules = {
   'eol-last': [
     ERROR,
     'always',
-  ]
-  'no-trailing-spaces': ERROR
+  ],
+  'no-trailing-spaces': ERROR,
   'no-alert': ERROR,
   'no-console': ERROR,
   'prefer-template': ERROR,
