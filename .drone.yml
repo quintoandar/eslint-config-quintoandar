@@ -34,7 +34,7 @@ pipeline:
       - cd eslint-config-quintoandar-pwa
       - npm run lint --unsafe-perm --quiet
 
-  test-pwa:
+  test-base:
     group: build
     image: node:8.9.4
     commands:

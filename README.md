@@ -26,7 +26,7 @@ Sharable config to our projects built with nodejs including microservers.
 
 github package: [/eslint-config-quintoandar-base](/eslint-config-quintoandar-base/)
 
-npm package: WIP
+npm package: [https://www.npmjs.com/package/eslint-config-quintoandar-base](https://www.npmjs.com/package/eslint-config-quintoandar-base)
 
 ## eslint-config-quintoandar-pwa ![eslint-config-quintoandar-pwa]
 
