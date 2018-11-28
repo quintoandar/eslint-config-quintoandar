@@ -5,21 +5,20 @@
 
 ## Table of Contents
 
-* [Getting start](#getting-start)
+* [Getting started](#getting-started)
 * [Rules](#rules)
 * [Versioning](#versioning)
 * [Contributing](#contributing)
 
-## Getting start
+## Getting started
 
-This package provides QuintoAndar's custom eslint rules, that are created by our engineer's demand.
+This package provides QuintoAndar's custom eslint rules, that are created by our engineers' demand.
 All these rules are accessible in the eslint config that is plugged in. For example, the package `eslint-config-quintoandar-pwa` uses it as a plugin.
 
 These custom rules can be used in two ways:
 
 - use directly, applying to everybody
-- use new custom rule progressive
-
+- use new custom rule progressively
 
 ### How to add in a project as an eslint plugin
 
@@ -47,6 +46,18 @@ or
 
 ## Rules
 
+### No dynamic import index
+
+Do not allow dynamically importing `index` files i.e. `import('./index')`, `import('../index')`. This rule was created because if multiple [react-loadable](https://github.com/jamiebuilds/react-loadable) components used the same path in the `import()` call, it would cause problems during chunk resolution and a page would load more JS chunks than necessary. Since most of the problems arose with multiple files named 'index', this rules suggests to rename them with a more specific name.
+
+#### How to use it
+
+Just add the code below in your rules array:
+
+```js
+"quintoandar/no-dynamic-import-index": 2,
+```
+
 ### No target blank
 
 Do not allow the usage of `target="_blank"` without `rel="noopener noreferrer` because of a security problem.
@@ -56,7 +67,7 @@ Do not allow the usage of `target="_blank"` without `rel="noopener noreferrer` b
 Just add the code below in your rules array:
 
 ```js
-"internal/no-target-blank": 2,
+"quintoandar/no-target-blank": 2,
 ```
 
 ### No typo components
@@ -65,7 +76,7 @@ Create a new custom rule is also a way to move from the deprecated approach to n
 
 #### How to use it
 
-Just add the code below in your rules array
+Just add the code below in your rules array:
 
 ```js
 "quintoandar/no-typo-components": 2,
