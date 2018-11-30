@@ -2,7 +2,7 @@
   "name": "eslint-config-quintoandar-base",
   "description": "ESLint Shareable Config for QuintoAndar's Base JS projects",
   "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-base#readme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "ISC",
   "main": "index.js",
   "engines": {
