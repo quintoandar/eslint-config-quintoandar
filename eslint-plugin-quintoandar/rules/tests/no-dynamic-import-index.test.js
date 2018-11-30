@@ -19,9 +19,8 @@ const parserOptions = {
 // Tests
 // ------------------------------------------------------------------------------
 
-const message = 'Do not dynamically import "index" files, give them a more unique name instead. ' +
-  'Duplicated import() strings across a project may cause problems with react-loadable ' +
-  'requesting more chunks than necessary.';
+const message = `Do not dynamically import "index" files, give them a more unique name instead.
+Duplicated import() strings across a project may cause problems with react-loadable requesting more chunks than necessary.`;
 
 const errors = [{ message }];
 

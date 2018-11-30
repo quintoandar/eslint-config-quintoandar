@@ -1,9 +1,8 @@
-const message = 'Do not dynamically import "index" files, give them a more unique name instead. ' +
-  'Duplicated import() strings across a project may cause problems with react-loadable ' +
-  'requesting more chunks than necessary.';
+const message = `Do not dynamically import "index" files, give them a more unique name instead.
+Duplicated import() strings across a project may cause problems with react-loadable requesting more chunks than necessary.`;
 
 // Match strings ending in '/index' with optional extension
-const re = /.*\/index(\..*)?$/;
+const indexFileRegex = /.*\/index(\..*)?$/;
 
 module.exports = {
   meta: {
@@ -16,7 +15,7 @@ module.exports = {
   create: function noDynamicImportIndex(context) {
     return {
       CallExpression(node) {
-        if (node.callee.type === 'Import' && node.arguments.some((arg) => re.test(arg.value))) {
+        if (node.callee.type === 'Import' && node.arguments.some((arg) => indexFileRegex.test(arg.value))) {
           context.report({ node, message });
         }
       },
