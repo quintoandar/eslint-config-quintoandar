@@ -1,0 +1,50 @@
+{
+  "name": "eslint-config-quintoandar-base",
+  "description": "ESLint Shareable Config for QuintoAndar's Base JS projects",
+  "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-base#readme",
+  "version": "1.0.0",
+  "license": "ISC",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 8"
+  },
+  "keywords": [
+    "eslint",
+    "sharable-config",
+    "quintoandar",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-base"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --coverage",
+    "test:watch": "jest --watchAll"
+  },
+  "peerDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "5.9.1",
+    "eslint-config-airbnb-base": "10.0.1",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.4.1"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "testRegex": "tests/.*\\.test\\.js"
+  }
+}
