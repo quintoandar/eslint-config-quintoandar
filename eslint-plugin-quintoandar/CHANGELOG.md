@@ -2,6 +2,12 @@
 
 ## master
 
+## 1.1.0 - no-dynamic-import-index rule
+
+### Features
+
+- Create no-dynamic-import-index rule to disallow dynamic imports of 'index' files, i.e. `import('./index')`, `import('../index')`
+
 ## 1.0.1 - Fixes in readme
 
 ### Fixes
