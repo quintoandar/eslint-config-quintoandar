@@ -5,6 +5,7 @@ module.exports = {
     'no-target-blank': require('./rules/no-target-blank'),
     'no-typo-components': require('./rules/no-typo-components'),
     'no-block-party-colors': require('./rules/no-block-party-colors'),
+    'no-rgba-colors': require('./rules/no-rgba-colors'),
   },
   configs: {
     recommended: {
@@ -12,6 +13,7 @@ module.exports = {
         'no-target-blank': 2,
         'no-typo-components': 2,
         'no-block-party-colors': 2,
+        'no-rgba-colors': 2,
       },
     },
   },
