@@ -82,6 +82,35 @@ Just add the code below in your rules array:
 "quintoandar/no-typo-components": 2,
 ```
 
+### No Block-Party colors
+
+Don't allow usage of Block-party colors.
+Use withTheme instead (see: https://material-ui.com/css-in-js/api/#withtheme-component-component)
+or use ThemeProvider (see: https://material-ui.com/css-in-js/api/#themeprovider)
+Make sure to follow the guidelines to fix it (see: https://github.com/quintoandar/guidelines/blob/master/pwa/styling.md#theme).
+
+#### How to use it
+
+Just add the code below in your rules array:
+
+```js
+"quintoandar/no-block-party-colors": 2,
+```
+
+### No rgba colors
+
+Don't allow usage of hardcoded rgba colors.
+Use colorToRgbString instead with color and opacity. Like:
+`colorToRgbString(themeColor, 0.5)`
+
+#### How to use it
+
+Just add the code below in your rules array:
+
+```js
+"quintoandar/no-rgba-colors": 2,
+```
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [CHANGELOG.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-plugin-quintoandar/CHANGELOG.md)
