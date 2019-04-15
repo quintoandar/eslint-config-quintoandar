@@ -5,14 +5,16 @@ const reportText = `
 `;
 
 module.exports = function noHardcodedRgbaColors(context) {
+  const sourceCode = context.getSourceCode();
+  const source = sourceCode.getText();
   return {
-    ImportDeclaration(node) {
-      if (node.source.value.indexOf('rgba') >= 0) {
-        context.report({
-          node,
-          message: reportText,
-        });
+      "Identifier": function(node) {
+        if (source.indexOf('rgb(') >= 0 || source.indexOf('rgba(') >= 0) {
+          context.report({
+            node,
+            message: reportText,
+          });
+        }
       }
-    }
   };
 };

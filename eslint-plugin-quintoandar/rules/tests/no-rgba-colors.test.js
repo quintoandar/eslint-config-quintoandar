@@ -29,18 +29,15 @@ const reportText = `
 const errors = [{ reportText }];
 
 const ruleTester = new RuleTester({ parserOptions });
-ruleTester.run('no-hardcoded-colors', rule, {
+ruleTester.run('no-hardcoded-rgba-colors', rule, {
   valid: [
-    { code: "colorToRgbString(themeColor, 0.5)" },
+    { code: "colorToRgbString('#000', 0.5)" },
   ],
   invalid: [{
-    code: "rgba()",
-    errors,
-  }, {
     code: "rgba(0,0,0, 0.5)",
     errors,
   }, {
     code: "rgb(0,0,0)",
     errors,
-  }]
+  }],
 });
