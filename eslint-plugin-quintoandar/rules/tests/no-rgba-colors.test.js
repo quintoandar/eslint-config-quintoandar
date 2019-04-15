@@ -23,6 +23,7 @@ const parserOptions = {
 const reportText = `
   Do not use hardcoded rgb or rgba colors.
   Use colorToRgbString instead with color and opacity. Like:
+  Path: import { colorToRgbString } from 'block-party/util/colorToRgb';
   colorToRgbString(themeColor, 0.5)
 `;
 
