@@ -6,11 +6,9 @@ const reportText = `
 `;
 
 module.exports = function noHardcodedRgbaColors(context) {
-  const sourceCode = context.getSourceCode();
-  const source = sourceCode.getText();
   return {
       "Identifier": function(node) {
-        if (node.name.indexOf('rgb') >= 0 || source.indexOf('rgba') >= 0) {
+        if (node.name.indexOf('rgb') >= 0 || node.name.indexOf('rgba') >= 0) {
           context.report({
             node,
             message: reportText,
