@@ -1,9 +1,14 @@
-/* From https://github.com/azeemba/eslint-plugin-json */
 /**
- * @fileoverview Lint JSON files
- * @author Azeem Bande-Ali
- * @copyright 2015 Azeem Bande-Ali. All rights reserved.
- * See LICENSE file in root directory for full license.
+ * This processor is based upon:
+ * - https://github.com/azeemba/eslint-plugin-json
+ * - https://github.com/kellyselden/eslint-plugin-json-files
+ * 
+ * ESLint does not natively supports process files other then JS.
+ * This processor adds capabilities to process JSON files using
+ * vscode's json processor: vscode-json-languageservice.
+ * 
+ * It does not work exactly as a ordinary ESLint processor because JSON
+ * is a different language than JS.
  */
 "use strict";
 
@@ -110,7 +115,6 @@ const getDiagnostics = function(textDocument, jsonDocument) {
 	return diagnostics;
 };
 
-// import processors
 module.exports = {
 	preprocess(text, fileName) {
 		const textDocument = jsonService.TextDocument.create(fileName, "json", 1, text);
