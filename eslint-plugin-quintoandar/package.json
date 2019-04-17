@@ -33,6 +33,6 @@
     "mocha": "^5.0.1"
   },
   "dependencies": {
-    "vscode-json-languageservice": "^3.2.0"
+    "eslint-plugin-json": "^1.4.0"
   }
 }
