@@ -119,7 +119,7 @@ Do not allow `package-lock.json` to contain `resolved` references pointed out to
 
 `.npmrc` file in node or pwa projects points to resolve references from `nexus` registry.
 
-Whenever using npm-cli outside our network or, for some other unkown reason, `package-lock.json` could change this `resolved` key to point directly to npm's registry.
+Whenever using npm-cli outside our network or Nexus could not provide packages, `package-lock.json` may change his `resolved`s keys to point directly to npm's registry.
 
 As described in [documentation](https://docs.npmjs.com/files/package-locks.html), npm-cli tries to fetch from `resolved` first:
 
@@ -130,6 +130,14 @@ The module tree described by the package lock is reproduced. This means reproduc
 
 The tree is walked and any missing dependencies are installed in the usual fashion.
 ```
+
+#### Workarounds
+
+In order to fix "automatically" `package-lock.json`, we usually try some of this steps:
+
+1. Revert `package-lock.json` changes and run `npm intall` again
+2. Remove `node_modules` folder and repeat step 1
+3. As a last resort (not recommended), manually replace urls
 
 #### How to use it
 
