@@ -1,19 +1,22 @@
 const jsonProcessor = require('eslint-plugin-json').processors['.json'];
 
+const whitelistJsonRules = ['quintoandar/no-npm-registry'];
+
+const convertToModuleExports = (text) => `module.exports = ${text}`;
+
+const filterDefaultESLintRules = ({ ruleId }) => whitelistJsonRules.indexOf(ruleId) !== -1;
+
+const reducerErrorMessages = (total, next) => total.concat(next.filter(filterDefaultESLintRules));
+
+const preprocess = (text, fileName) => jsonProcessor.preprocess(text, fileName).map(convertToModuleExports);
+
+const postprocess = (messages, fileName) => jsonProcessor.postprocess(messages, fileName)
+  .concat(messages.reduce(reducerErrorMessages, []));
+
 module.exports = {
-	preprocess(text, fileName) {
-		return jsonProcessor.preprocess(text, fileName)
-			.map((text) => `module.exports = ${text}`);
-	},
-	postprocess(messages, fileName) {
-		return jsonProcessor.postprocess(messages, fileName).concat(
-			messages.reduce((total, next) => {
-				// Disables ESLint rules except for the one filtered
-				return total.concat(next.filter(error => {
-					return error.ruleId === 'quintoandar/no-npm-registry';
-				}));
-			}, [])
-		);
-	},
-	supportsAutofix: true
+  whitelistJsonRules,
+  filterDefaultESLintRules,
+  preprocess,
+  postprocess,
+  supportsAutofix: true
 };

@@ -6,6 +6,7 @@ describe("plugin", function() {
     it("should contain preprocess property", function() {
       assert.property(plugin, "preprocess", ".json.preprocess is not defined");
     });
+
     it("should contain postprocess property", function() {
       assert.property(
         plugin,
@@ -14,6 +15,29 @@ describe("plugin", function() {
       );
     });
   });
+
+  describe("filterDefaultESLintRules", function() {
+    describe('when ruleId is undefined', () => {
+      it('should return false', () => {
+        assert.isFalse(plugin.filterDefaultESLintRules({}));
+      });
+    });
+
+    describe('when ruleId is empty', () => {
+      it('should return false', () => {
+        assert.isFalse(plugin.filterDefaultESLintRules({ ruleId: '' }));
+      });
+    });
+    
+    describe('when ruleId is "quintoandar/no-npm-registry"', () => {
+      it('should return true', () => {
+        assert.isTrue(plugin.filterDefaultESLintRules({
+          ruleId: plugin.whitelistJsonRules[0],
+        }));
+      });
+    });
+  });
+
   describe("preprocess", function() {
     const preprocess = plugin.preprocess;
     it("should return the same text", function() {
@@ -25,6 +49,7 @@ describe("plugin", function() {
       assert.strictEqual(newText[0], `module.exports = ${text}`);
     });
   });
+  
   describe("postprocess", function() {
     const preprocess = plugin.preprocess;
     const postprocess = plugin.postprocess;

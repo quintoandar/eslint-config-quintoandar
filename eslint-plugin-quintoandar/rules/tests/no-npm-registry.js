@@ -23,8 +23,8 @@ const preprocessor = (tests) => {
 
 const ruleTester = new RuleTester();
 ruleTester.run("no-npm-registry", rule, preprocessor({
-	valid: [
-		{
+  valid: [
+    {
       code: '{ "resolved": "https://nexus.quintoandar.com.br/repository/npm/@babel/core/-/core-7.3.3.tgz" }',
       filename: 'package-lock.json',
     },
@@ -32,14 +32,14 @@ ruleTester.run("no-npm-registry", rule, preprocessor({
       code: '{}',
       filename: 'anything',
     },
-	],
-	invalid: [
-		{
+  ],
+  invalid: [
+    {
       code: '{ "resolved": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.0.0-beta.40.tgz" }',
       filename: 'package-lock.json',
-			errors: [{
+      errors: [{
         reportText: 'Unexpected resolved domain at: https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.0.0-beta.40.tgz\nThis project must use Nexus as registry. More info at https://quin.to/eslint-rule-no-npm-registry',
       }],
-		},
-	],
+    },
+  ],
 }));
