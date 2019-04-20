@@ -20,7 +20,10 @@ const create = (context) => {
             package: node.value.value
           },
           fix(fixer) {
-            // WIP: The fix is done but the processor it is not applying it, yet!
+            /** 
+             * https://quintoandar.atlassian.net/browse/FOX-931
+             * WIP: Processor not applying this fix!
+             */
             const newUrl = node.value.value.replace(npmRegistryPattern, nexusURL);
             return fixer.replaceText(node.value, newUrl);
           }
