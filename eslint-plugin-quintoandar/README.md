@@ -111,6 +111,42 @@ Just add the code below in your rules array:
 "quintoandar/no-rgba-colors": 2,
 ```
 
+### No npm registry
+
+Do not allow `package-lock.json` to contain `resolved` references pointed out to `registry.npmjs.org`.
+
+#### Why
+
+`.npmrc` file in node or pwa projects points to resolve references from `nexus` registry.
+
+Whenever using npm-cli outside our network or Nexus could not provide packages, `package-lock.json` may change his `resolved`s keys to point directly to npm's registry.
+
+As described in [documentation](https://docs.npmjs.com/files/package-locks.html), npm-cli tries to fetch from `resolved` first:
+
+```
+The presence of a package lock changes the installation behavior such that:
+
+The module tree described by the package lock is reproduced. This means reproducing the structure described in the file, using the specific files referenced in “resolved” if available, falling back to normal package resolution using “version” if one isn’t.
+
+The tree is walked and any missing dependencies are installed in the usual fashion.
+```
+
+#### Workarounds
+
+In order to fix "automatically" `package-lock.json`, we usually try some of this steps:
+
+1. Revert `package-lock.json` changes and run `npm intall` again
+2. Remove `node_modules` folder and repeat step 1
+3. As a last resort (not recommended), manually replace urls
+
+#### How to use it
+
+Just add the code below in your rules array (preferable to a progressive-lint config):
+
+```js
+"quintoandar/no-npm-registry": 2,
+```
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [CHANGELOG.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-plugin-quintoandar/CHANGELOG.md)
