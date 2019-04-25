@@ -30,13 +30,16 @@ const errors = [{ reportText }];
 const ruleTester = new RuleTester({ parserOptions });
 ruleTester.run('no-themeprovider-import', rule, {
   valid: [
-    { code: "import ThemeProvider from '@material-ui/core/styles/MuiThemeProvider'" },
+    { code: "import withTheme from '@material-ui/core/styles/withTheme'" },
   ],
   invalid: [{
     code: "import ThemeProvider from 'assets/themeprovider'",
     errors,
   }, {
     code: "import ThemeProvider from 'block-party/assets/themeprovider'",
+    errors,
+  }, {
+    code: "import ThemeProvider from '@material-ui/core/styles/MuiThemeProvider'",
     errors,
   }]
 });
