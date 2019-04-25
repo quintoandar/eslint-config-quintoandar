@@ -23,7 +23,6 @@ const parserOptions = {
 const reportText = `
   Do not use any of Block-party colors.
   Use withTheme instead (see: https://material-ui.com/css-in-js/api/#withtheme-component-component)
-  or use ThemeProvider (see: https://material-ui.com/css-in-js/api/#themeprovider).
 `;
 
 const errors = [{ reportText }];
