@@ -1,6 +1,7 @@
 const notAllowedPaths = [
   '@material-ui/core/styles/MuiThemeProvider',
   'assets/themeprovider',
+  'block-party/assets/themeprovider',
 ];
 
 const reportText = `
