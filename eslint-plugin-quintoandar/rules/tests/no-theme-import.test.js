@@ -4,7 +4,7 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
-const rule = require('../no-block-party-colors');
+const rule = require('../no-theme-import');
 const RuleTester = require('eslint').RuleTester;
 
 const parserOptions = {
@@ -21,22 +21,25 @@ const parserOptions = {
 // ------------------------------------------------------------------------------
 
 const reportText = `
-  Do not use any of Block-party colors.
+  Do not import theme directly.
   Use withTheme instead (see: https://material-ui.com/css-in-js/api/#withtheme-component-component)
 `;
 
 const errors = [{ reportText }];
 
 const ruleTester = new RuleTester({ parserOptions });
-ruleTester.run('no-hardcoded-colors', rule, {
+ruleTester.run('no-theme-import', rule, {
   valid: [
     { code: "import withTheme from '@material-ui/core/styles/withTheme'" },
   ],
   invalid: [{
-    code: "import { white } from 'assets/values/colors'",
+    code: "import theme from 'assets/themes/blue'",
     errors,
   }, {
-    code: "import { white } from 'block-party/assets/values/colors'",
+    code: "import theme from 'block-party/assets/themes/light-v1'",
+    errors,
+  }, {
+    code: "import theme from 'block-party/assets/themes/blue'",
     errors,
   }]
 });
