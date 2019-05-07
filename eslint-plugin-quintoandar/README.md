@@ -84,9 +84,8 @@ Just add the code below in your rules array:
 
 ### No Block-Party colors
 
-Don't allow usage of Block-party colors.
-Use withTheme instead (see: https://material-ui.com/css-in-js/api/#withtheme-component-component)
-or use ThemeProvider (see: https://material-ui.com/css-in-js/api/#themeprovider)
+Don't allow usage of Block-party colors.\
+Use withTheme instead (see: https://material-ui.com/css-in-js/api/#withtheme-component-component)\
 Make sure to follow the guidelines to fix it (see: https://github.com/quintoandar/guidelines/blob/master/pwa/styling.md#theme).
 
 #### How to use it
@@ -99,7 +98,7 @@ Just add the code below in your rules array:
 
 ### No rgba colors
 
-Don't allow usage of hardcoded rgba colors.
+Don't allow usage of hardcoded rgba colors.\
 Use colorToRgbString instead with color and opacity. Like:
 `colorToRgbString(themeColor, 0.5)`
 
@@ -109,6 +108,32 @@ Just add the code below in your rules array:
 
 ```js
 "quintoandar/no-rgba-colors": 2,
+```
+
+### No theme import
+
+Do not import theme directly. (except for test files).\
+Use withTheme instead (see: https://material-ui.com/css-in-js/api/#withtheme-component-component)
+
+#### How to use it
+
+Just add the code below in your rules array:
+
+```js
+"quintoandar/no-theme-import": 2,
+```
+
+### No ThemeProvider import
+
+Do not use ThemeProvider in components. (except for app.js)\
+Use withTheme instead (see: https://material-ui.com/css-in-js/api/#withtheme-component-component)
+
+#### How to use it
+
+Just add the code below in your rules array:
+
+```js
+"quintoandar/no-themeprovider-import": 2,
 ```
 
 ### No npm registry
