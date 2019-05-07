@@ -10,8 +10,6 @@ module.exports = {
     'no-block-party-colors': require('./rules/no-block-party-colors'),
     'no-rgba-colors': require('./rules/no-rgba-colors'),
     'no-npm-registry': require('./rules/no-npm-registry'),
-    'no-theme-import': require('./rules/no-theme-import'),
-    'no-themeprovider-import': require('./rules/no-themeprovider-import'),
   },
   configs: {
     recommended: {
@@ -21,8 +19,6 @@ module.exports = {
         'no-block-party-colors': 2,
         'no-rgba-colors': 2,
         'no-npm-registry': 2,
-        'no-theme-import': 2,
-        'no-themeprovider-import': 2,
       },
     },
   },
