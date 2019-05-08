@@ -2,7 +2,7 @@
   "name": "eslint-config-quintoandar-pwa",
   "description": "ESLint Shareable Config for QuintoAndar's PWAs",
   "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-pwa#readme",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "ISC",
   "main": "index.js",
   "engines": {
