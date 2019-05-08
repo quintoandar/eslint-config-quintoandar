@@ -1,12 +1,12 @@
 {
   "name": "eslint-plugin-quintoandar",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "An eslint-plugin for PWA-Tenants custom rules",
   "main": "index.js",
   "scripts": {
     "coveralls": "cat ./reports/coverage/lcov.info | coveralls",
     "test": "npm run unit-test",
-    "unit-test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha **/tests/**/*.js -- --reporter dot"
+    "unit-test": "istanbul cover --dir reports/coverage mocha '{processors,rules}/**/tests/**/*.js' -- --reporter dot"
   },
   "files": [
     "index.js",
