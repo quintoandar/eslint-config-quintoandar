@@ -29,17 +29,23 @@ const errors = [{ reportText }];
 
 const ruleTester = new RuleTester({ parserOptions });
 ruleTester.run('no-theme-import', rule, {
-  valid: [
-    { code: "import withTheme from '@material-ui/core/styles/withTheme'" },
-  ],
+  valid: [{
+    code: "import withTheme from '@material-ui/core/styles/withTheme'"
+  }],
   invalid: [{
     code: "import theme from 'assets/themes/blue'",
     errors,
   }, {
-    code: "import theme from 'block-party/assets/themes/light-v1'",
+    code: "import theme from 'block-party/assets/themes/blue'",
     errors,
   }, {
-    code: "import theme from 'block-party/assets/themes/blue'",
+    code: "import theme from 'block-party/assets/themes/green'",
+    errors,
+  }, {
+    code: "import theme from 'block-party/assets/values/theme'",
+    errors,
+  }, {
+    code: "import theme from 'assets/values/theme'",
     errors,
   }]
 });
