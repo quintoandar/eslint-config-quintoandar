@@ -3,5 +3,14 @@
   "rules": {
     "comma-dangle": 0,
     "prefer-destructuring": 0
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*-test.js", "app.js", "app/*/*.js"],
+      "rules": {
+        "no-theme-import": "off",
+        "no-themeprovider-import": "off"
+      }
+    }
+  ]
 }
