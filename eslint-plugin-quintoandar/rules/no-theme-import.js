@@ -1,4 +1,5 @@
-const notAllowedPath = 'assets/themes/';
+const firstPath = 'assets/themes/';
+const secondPath = 'assets/values/theme';
 
 const reportText = `
   Do not import theme directly.
@@ -6,9 +7,10 @@ const reportText = `
 `;
 
 module.exports = function noThemeImport(context) {
+  const checkString = (node, string) => node.indexOf(string) >= 0;
   return {
     ImportDeclaration(node) {
-      if (node.source.value.indexOf(notAllowedPath) >= 0) {
+      if (checkString(node.source.value, firstPath) || checkString(node.source.value, secondPath)) {
         context.report({
           node,
           message: reportText,
