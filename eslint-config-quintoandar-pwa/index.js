@@ -29,10 +29,10 @@ module.exports = {
   },
 
   rules,
-  "overrides": [
+  overrides: [
     {
-      "files": ["*-test.js", "app.js", "app/*/*.js"],
-      "rules": {
+      files: ["*-test.js", "app.js", "app/*/*.js"],
+      rules: {
         "no-theme-import": "off",
         "no-themeprovider-import": "off"
       }
