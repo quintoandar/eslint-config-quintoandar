@@ -29,4 +29,13 @@ module.exports = {
   },
 
   rules,
+  "overrides": [
+    {
+      "files": ["*-test.js", "app.js", "app/*/*.js"],
+      "rules": {
+        "no-theme-import": "off",
+        "no-themeprovider-import": "off"
+      }
+    }
+  ],
 };
