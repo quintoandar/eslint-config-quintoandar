@@ -33,8 +33,8 @@ module.exports = {
     {
       files: ['*-test.js', 'app.js', 'app/*/*.js'],
       rules: {
-        'no-theme-import': 'off',
-        'no-themeprovider-import': 'off'
+        'quintoandar/no-theme-import': 'off',
+        'quintoandar/no-themeprovider-import': 'off'
       }
     }
   ],
