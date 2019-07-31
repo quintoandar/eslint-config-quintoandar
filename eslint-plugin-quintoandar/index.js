@@ -12,6 +12,8 @@ module.exports = {
     'no-npm-registry': require('./rules/no-npm-registry'),
     'no-theme-import': require('./rules/no-theme-import'),
     'no-themeprovider-import': require('./rules/no-themeprovider-import'),
+    'no-mui-import': require('./rules/no-mui-import'),
+    'no-direct-icons-import': require('./rules/no-direct-icons-import'),
   },
   configs: {
     recommended: {
@@ -23,6 +25,8 @@ module.exports = {
         'no-npm-registry': 2,
         'no-theme-import': 2,
         'no-themeprovider-import': 2,
+        'no-mui-import': 2,
+        'no-direct-icons-import': 2,
       },
     },
   },
