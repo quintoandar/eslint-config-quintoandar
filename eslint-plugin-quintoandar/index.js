@@ -14,6 +14,7 @@ module.exports = {
     'no-themeprovider-import': require('./rules/no-themeprovider-import'),
     'no-mui-import': require('./rules/no-mui-import'),
     'no-direct-icons-import': require('./rules/no-direct-icons-import'),
+    'no-dimens-import': require('./rules/no-dimens-import'),
   },
   configs: {
     recommended: {
@@ -27,6 +28,7 @@ module.exports = {
         'no-themeprovider-import': 2,
         'no-mui-import': 2,
         'no-direct-icons-import': 2,
+        'no-dimens-import': 2,
       },
     },
   },
