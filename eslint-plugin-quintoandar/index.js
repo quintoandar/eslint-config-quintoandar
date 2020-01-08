@@ -15,6 +15,7 @@ module.exports = {
     'no-mui-import': require('./rules/no-mui-import'),
     'no-direct-icons-import': require('./rules/no-direct-icons-import'),
     'no-dimens-import': require('./rules/no-dimens-import'),
+    'no-block-party-login-import': require('./rules/no-block-party-login'),
   },
   configs: {
     recommended: {
@@ -29,6 +30,7 @@ module.exports = {
         'no-mui-import': 2,
         'no-direct-icons-import': 2,
         'no-dimens-import': 2,
+        'no-block-party-login-import': 2,
       },
     },
   },

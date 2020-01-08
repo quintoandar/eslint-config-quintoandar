@@ -172,6 +172,19 @@ Just add the code below in your rules array (preferable to a progressive-lint co
 "quintoandar/no-npm-registry": 2,
 ```
 
+### No Block-Party Login import
+
+Don't allow usage of Block-party Login container.
+Use Biomas's Auth package instead (see: see: https://github.com/quintoandar/bioma/tree/master/packages/auth).
+
+#### How to use it
+
+Just add the code below in your rules array:
+
+```js
+"quintoandar/no-block-party-login-import": 2,
+```
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [CHANGELOG.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-plugin-quintoandar/CHANGELOG.md)
