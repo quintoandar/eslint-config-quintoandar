@@ -185,7 +185,7 @@ Just add the code below in your rules array:
 "quintoandar/no-block-party-login-import": 2,
 ```
 
-### No Block-Party Login import
+### No Block-Party WaffleMenu import
 
 Don't allow usage of Block-party WaffleMenu containers and components.
 Use Biomas's waffle-menu package instead (see: see: https://github.com/quintoandar/bioma/tree/master/packages/waffle-menu).
