@@ -31,6 +31,7 @@ module.exports = {
         'no-direct-icons-import': 2,
         'no-dimens-import': 2,
         'no-block-party-login-import': 2,
+        'no-block-party-waffle-menu-import': 2,
       },
     },
   },
