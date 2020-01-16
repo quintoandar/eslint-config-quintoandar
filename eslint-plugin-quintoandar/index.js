@@ -16,6 +16,7 @@ module.exports = {
     'no-direct-icons-import': require('./rules/no-direct-icons-import'),
     'no-dimens-import': require('./rules/no-dimens-import'),
     'no-block-party-login-import': require('./rules/no-block-party-login'),
+    'no-block-party-waffle-menu-import': require('./rules/no-block-party-waffle-menu'),
   },
   configs: {
     recommended: {
