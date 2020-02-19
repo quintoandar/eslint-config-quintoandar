@@ -17,6 +17,7 @@ module.exports = {
     'no-dimens-import': require('./rules/no-dimens-import'),
     'no-block-party-login-import': require('./rules/no-block-party-login'),
     'no-block-party-waffle-menu-import': require('./rules/no-block-party-waffle-menu'),
+    'no-block-party-cozy-components': require('./rules/no-block-party-cozy-components'),
   },
   configs: {
     recommended: {
@@ -33,6 +34,7 @@ module.exports = {
         'no-dimens-import': 2,
         'no-block-party-login-import': 2,
         'no-block-party-waffle-menu-import': 2,
+        'no-block-party-cozy-components': 2,
       },
     },
   },
