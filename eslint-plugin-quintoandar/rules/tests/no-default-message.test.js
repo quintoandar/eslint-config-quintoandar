@@ -20,8 +20,8 @@ const parserOptions = {
 
 const reportText = `
   Do not access defaultMessage directly.
-  We use react Intl for internationalization, so we MUST always use of intl.formatMessage 
-  instead of accessing directly the message of the object (.defaultMessage).
+  We use react-intl for internationalization, so we MUST always use intl.formatMessage function
+  instead of accessing the message directly from the object (.defaultMessage).
 
   See more: https://guidelines.quintoandar.com.br/#/pwa/internationalization
 `;
