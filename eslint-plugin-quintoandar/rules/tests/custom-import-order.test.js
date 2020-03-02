@@ -40,7 +40,8 @@ const reportTextOutOfOrder = `
 
 const reportTextSortedAlphabetically = 'The imports should be sorted alphabetically';
 
-const validCode = `
+/** Valid test with all possible imports */
+const validCodeAllImports = `
   import React from 'react';
 
   import something from 'external-lib/something-a';
@@ -61,19 +62,73 @@ const validCode = `
   import AndOneMoreThingFromRelativePath from './AndOneMoreThing';
 `;
 
-const invalidCode = `
-  import SomeComponent from 'some-component';
+/** Valid test with some of the possible imports */
+const validCodeSomeImports = `
+  import something from 'external-lib/something-a';
+  import anotherThing from 'external-lib/something-b';
 
+  import SomeInternalComponent from 'components/SomeComponent';
+  import SomeInternalContainer from 'containers/SomeContainer';
+  import someInternalHelper from 'helpers/someHelper';
+  import someInternalUtil from 'utils/someUtil';
+
+  import SomethingFromRelativePath from '../../Something';
+  import AndOneMoreThingFromRelativePath from './AndOneMoreThing';
+`;
+
+/** Invalid test with unordered imports */
+const invalidCodeUnorderedImports = `
   import React from 'react';
+
+  import SomeInternalComponent from 'components/SomeComponent';
+
+  import SomeBiomaComponent from '@quintoandar/bioma-component-a/SomeComponent';
+
+  import something from 'external-lib/something-a';
+`;
+
+/** Invalid test with imports not sorted alphabetically */
+const invalidCodeNotSortedAlphabetically = `
+  import anotherThing from 'external-lib/something-b';
+  import something from 'external-lib/something-a';
+
+  import someInternalUtil from 'utils/someUtil';
+  import SomeInternalComponent from 'components/SomeComponent';
+
+  import AndOneMoreThingFromRelativePath from './AndOneMoreThing';
+  import SomethingFromRelativePath from '../../Something';
+`;
+
+/** Invalid test with unordered abd not sorted alphabetically imports */
+const invalidCodeUnorderedAndNotSorted = `
+  import someInternalUtil from 'utils/someUtil';
+  import SomeInternalComponent from 'components/SomeComponent';
+
+  import anotherThing from 'external-lib/something-b';
+  import something from 'external-lib/something-a';
+
+  import AndOneMoreThingFromRelativePath from './AndOneMoreThing';
+  import SomethingFromRelativePath from '../../Something';
 `;
 
 const ruleTester = new RuleTester({ parserOptions });
 ruleTester.run('custom-import-order', rule, {
   valid: [
-    { code: validCode },
+    { code: validCodeAllImports },
+    { code: validCodeSomeImports },
   ],
-  invalid: [{
-    code: invalidCode,
-    errors: [{ reportTextOutOfOrder }],
-  }]
+  invalid: [
+    {
+      code: invalidCodeUnorderedImports,
+      errors: [{ reportTextOutOfOrder }, { reportTextOutOfOrder }],
+    },
+    {
+      code: invalidCodeNotSortedAlphabetically,
+      errors: [{ reportTextSortedAlphabetically }, { reportTextSortedAlphabetically }, { reportTextSortedAlphabetically }],
+    },
+    {
+      code: invalidCodeUnorderedAndNotSorted,
+      errors: [{ reportTextOutOfOrder }, { reportTextSortedAlphabetically }, { reportTextSortedAlphabetically }, { reportTextSortedAlphabetically }],
+    },
+  ]
 });

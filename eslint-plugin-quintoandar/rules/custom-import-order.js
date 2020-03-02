@@ -36,7 +36,7 @@ const reportTextOutOfOrder = `
 
 const reportTextSortedAlphabetically = 'The imports should be sorted alphabetically';
 
-module.exports = function noHardcodedColors(context) {
+module.exports = function customImportOrder(context) {
   let pastImportPosition = -1;
   let lastImportValue = '';
 
