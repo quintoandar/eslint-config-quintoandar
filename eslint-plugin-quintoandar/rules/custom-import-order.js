@@ -1,35 +1,36 @@
-const reactPath = /^react$/;
+const companyPaths = '@quintoandar/';
 
-const externalLibsPaths = /^(?!(.\/|..\/|@quintoandar\/|components\/|containers\/|helpers\/|utils\/))/;
+const projectAbsolutePaths = ['components/', 'containers/', 'helpers/', 'utils/'];
 
-const companyPaths = /^@quintoandar\//;
+const relativePaths = ['./', '../'];
 
-const projectAbsolutePaths = /^(components\/|containers\/|helpers\/|utils\/)/;
+const pathsUnion = [companyPaths]
+  .concat(relativePaths)
+  .concat(projectAbsolutePaths);
 
-const relativePaths = /^(.\/|..\/)/;
+const reactPathPattern = /^react$/;
+const externalLibsPathsPattern = new RegExp(`^(?!(${pathsUnion.join('|')}))`);
+const companyPathsPattern = new RegExp(`^${companyPaths}`);
+const projectAbsolutePathsPattern = new RegExp(`^(${projectAbsolutePaths.join('|')})`);
+const relativePathsPattern = new RegExp(`^(${relativePaths.join('|')})`);
 
 const importOrder = [
-  reactPath,
-  externalLibsPaths,
-  companyPaths,
-  projectAbsolutePaths,
-  relativePaths,
+  reactPathPattern,
+  externalLibsPathsPattern,
+  companyPathsPattern,
+  projectAbsolutePathsPattern,
+  relativePathsPattern,
 ];
 
 const reportTextOutOfOrder = `
   The imports should follow the order:
-
   import ... from 'react';
-
   import ... from 'external-lib';
-
   import ... from '@quintoandar/';
-
   import ... from 'components/';
   import ... from 'containers/';
   import ... from 'helpers/';
   import ... from 'utils/';
-
   import ... from '../';
   import ... from './';
 `;
