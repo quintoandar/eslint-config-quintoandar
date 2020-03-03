@@ -37,28 +37,37 @@ const reportTextOutOfOrder = `
 
 const reportTextSortedAlphabetically = 'The imports should be sorted alphabetically';
 
-module.exports = function customImportOrder(context) {
-  let pastImportPosition = -1;
-  let lastImportValue = '';
+module.exports = {
+  meta: {
+    type: 'layout',
+    docs: {
+      description: 'Quintoandar custom import order',
+      category: 'Stylistic Issues',
+    },
+  },
+  create: function customImportOrder(context) {
+    let pastImportPosition = -1;
+    let lastImportValue = '';
 
-  return {
-    ImportDeclaration(node) {
-      const currentImportValue = node.source.value;
-      const newImportPosition = importOrder.findIndex((importPath) => importPath.test(currentImportValue));
-      if (newImportPosition >= 0 && pastImportPosition > newImportPosition) {
-        context.report({
-          node,
-          message: reportTextOutOfOrder,
-        });
-      } else if (newImportPosition === pastImportPosition && lastImportValue > currentImportValue) {
-        context.report({
-          node,
-          message: reportTextSortedAlphabetically,
-        });
-      } else if (newImportPosition >= 0) {
-        pastImportPosition = newImportPosition;
-        lastImportValue = currentImportValue;
+    return {
+      ImportDeclaration(node) {
+        const currentImportValue = node.source.value;
+        const newImportPosition = importOrder.findIndex((importPath) => importPath.test(currentImportValue));
+        if (newImportPosition >= 0 && pastImportPosition > newImportPosition) {
+          context.report({
+            node,
+            message: reportTextOutOfOrder,
+          });
+        } else if (newImportPosition === pastImportPosition && lastImportValue > currentImportValue) {
+          context.report({
+            node,
+            message: reportTextSortedAlphabetically,
+          });
+        } else if (newImportPosition >= 0) {
+          pastImportPosition = newImportPosition;
+          lastImportValue = currentImportValue;
+        }
       }
-    }
-  };
+    };
+  },
 };
