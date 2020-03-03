@@ -44,6 +44,7 @@ module.exports = {
       description: 'Quintoandar custom import order',
       category: 'Stylistic Issues',
     },
+    fixable: 'code',
   },
   create: function customImportOrder(context) {
     let pastImportPosition = -1;
@@ -57,6 +58,15 @@ module.exports = {
           context.report({
             node,
             message: reportTextOutOfOrder,
+            fix: function(fixer) {
+              const sourceCode = context.getSourceCode();
+              const previousNode = sourceCode.getNodeByRangeIndex(sourceCode.getTokenBefore(node).range[0]);
+              
+              const previousNodeText = sourceCode.getText(previousNode);
+              const currentNodeText = sourceCode.getText(node);
+
+              return [fixer.replaceText(previousNode, currentNodeText), fixer.replaceText(node, previousNodeText)];
+            }
           });
         } else if (newImportPosition === pastImportPosition && lastImportValue > currentImportValue) {
           context.report({
