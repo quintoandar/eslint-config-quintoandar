@@ -4,7 +4,7 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
-const rule = require('../custom-import-order');
+const rule = require('../quintoandar-import-order');
 const RuleTester = require('eslint').RuleTester;
 
 const parserOptions = {
@@ -112,7 +112,7 @@ const invalidCodeUnorderedAndNotSorted = `
 `;
 
 const ruleTester = new RuleTester({ parserOptions });
-ruleTester.run('custom-import-order', rule, {
+ruleTester.run('quintoandar-import-order', rule, {
   valid: [
     { code: validCodeAllImports },
     { code: validCodeSomeImports },
