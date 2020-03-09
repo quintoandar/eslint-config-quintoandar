@@ -103,28 +103,6 @@ const invalidCodeUnorderedAndNotSorted = `
   import SomethingFromRelativePath from '../../Something';
 `;
 
-/** Invalid test with one unordered import (auto-fix test) */
-const invalidCodeUnorderedImportsAutoFix = `
-  import React from 'react';
-
-  import something from 'external-lib/something-a';
-
-  import SomeInternalComponent from 'components/SomeComponent';
-
-  import SomeBiomaComponent from '@quintoandar/bioma-component-a/SomeComponent';
-`;
-
-/** Invalid test with one unordered import (auto-fix output) */
-const invalidCodeUnorderedImportsAutoFixOutput = `
-  import React from 'react';
-
-  import something from 'external-lib/something-a';
-
-  import SomeBiomaComponent from '@quintoandar/bioma-component-a/SomeComponent';
-
-  import SomeInternalComponent from 'components/SomeComponent';
-`;
-
 const ruleTester = new RuleTester({ parserOptions });
 ruleTester.run('quintoandar-import-order', rule, {
   valid: [
@@ -143,11 +121,6 @@ ruleTester.run('quintoandar-import-order', rule, {
     {
       code: invalidCodeUnorderedAndNotSorted,
       errors: [{ reportTextOutOfOrder }, { reportTextSortedAlphabetically }, { reportTextSortedAlphabetically }, { reportTextSortedAlphabetically }],
-    },
-    {
-      code: invalidCodeUnorderedImportsAutoFix,
-      errors: [{ reportTextOutOfOrder }],
-      output: invalidCodeUnorderedImportsAutoFixOutput
     },
   ]
 });

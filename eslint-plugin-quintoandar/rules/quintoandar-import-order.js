@@ -66,6 +66,16 @@ const getImportOrder = (context) => {
   return defaultImportOrder;
 }
 
+const getOrderImportsFixer = (context, node) => (fixer) => {
+  const sourceCode = context.getSourceCode();
+  const previousNode = sourceCode.getNodeByRangeIndex(sourceCode.getTokenBefore(node).range[0]);
+  
+  const previousNodeText = sourceCode.getText(previousNode);
+  const currentNodeText = sourceCode.getText(node);
+
+  return [fixer.replaceText(previousNode, currentNodeText), fixer.replaceText(node, previousNodeText)];
+}
+
 module.exports = {
   meta: {
     type: 'layout',
@@ -89,20 +99,13 @@ module.exports = {
           context.report({
             node,
             message: reportTextOutOfOrder,
-            fix: function(fixer) {
-              const sourceCode = context.getSourceCode();
-              const previousNode = sourceCode.getNodeByRangeIndex(sourceCode.getTokenBefore(node).range[0]);
-              
-              const previousNodeText = sourceCode.getText(previousNode);
-              const currentNodeText = sourceCode.getText(node);
-
-              return [fixer.replaceText(previousNode, currentNodeText), fixer.replaceText(node, previousNodeText)];
-            }
+            fix: getOrderImportsFixer(context, node),
           });
         } else if (newImportPosition === pastImportPosition && lastImportValue > currentImportValue) {
           context.report({
             node,
             message: reportTextSortedAlphabetically,
+            fix: getOrderImportsFixer(context, node),
           });
         } else if (newImportPosition >= 0) {
           pastImportPosition = newImportPosition;
