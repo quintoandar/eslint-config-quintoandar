@@ -22,18 +22,10 @@ const parserOptions = {
 
 const reportTextOutOfOrder = `
   The imports should follow the order:
-
   import ... from 'react';
-
   import ... from 'external-lib';
-
   import ... from '@quintoandar/';
-
-  import ... from 'components/';
-  import ... from 'containers/';
-  import ... from 'helpers/';
-  import ... from 'utils/';
-
+  import ... from 'project-absolute-paths/';
   import ... from '../';
   import ... from './';
 `;
