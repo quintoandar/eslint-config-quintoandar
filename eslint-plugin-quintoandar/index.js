@@ -19,7 +19,7 @@ module.exports = {
     'no-block-party-waffle-menu-import': require('./rules/no-block-party-waffle-menu'),
     'no-block-party-cozy-components': require('./rules/no-block-party-cozy-components'),
     'no-default-message': require('./rules/no-default-message'),
-    'custom-import-order': require('./rules/custom-import-order'),
+    'quintoandar-import-order': require('./rules/quintoandar-import-order'),
   },
   configs: {
     recommended: {
@@ -38,7 +38,7 @@ module.exports = {
         'no-block-party-waffle-menu-import': 2,
         'no-block-party-cozy-components': 2,
         'no-default-message': 2,
-        'custom-import-order': 2,
+        'quintoandar-import-order': 2,
       },
     },
   },

@@ -4,7 +4,7 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
-const rule = require('../custom-import-order');
+const rule = require('../quintoandar-import-order');
 const RuleTester = require('eslint').RuleTester;
 
 const parserOptions = {
@@ -22,18 +22,10 @@ const parserOptions = {
 
 const reportTextOutOfOrder = `
   The imports should follow the order:
-
   import ... from 'react';
-
   import ... from 'external-lib';
-
   import ... from '@quintoandar/';
-
-  import ... from 'components/';
-  import ... from 'containers/';
-  import ... from 'helpers/';
-  import ... from 'utils/';
-
+  import ... from 'project-absolute-paths/';
   import ... from '../';
   import ... from './';
 `;
@@ -134,7 +126,7 @@ const invalidCodeUnorderedImportsAutoFixOutput = `
 `;
 
 const ruleTester = new RuleTester({ parserOptions });
-ruleTester.run('custom-import-order', rule, {
+ruleTester.run('quintoandar-import-order', rule, {
   valid: [
     { code: validCodeAllImports },
     { code: validCodeSomeImports },

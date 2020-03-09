@@ -14,28 +14,57 @@ const companyPathsPattern = new RegExp(`^${companyPaths}`);
 const projectAbsolutePathsPattern = new RegExp(`^(${projectAbsolutePaths.join('|')})`);
 const relativePathsPattern = new RegExp(`^(${relativePaths.join('|')})`);
 
-const importOrder = [
-  reactPathPattern,
-  externalLibsPathsPattern,
-  companyPathsPattern,
-  projectAbsolutePathsPattern,
-  relativePathsPattern,
-];
-
 const reportTextOutOfOrder = `
   The imports should follow the order:
   import ... from 'react';
   import ... from 'external-lib';
   import ... from '@quintoandar/';
-  import ... from 'components/';
-  import ... from 'containers/';
-  import ... from 'helpers/';
-  import ... from 'utils/';
+  import ... from 'project-absolute-paths/';
   import ... from '../';
   import ... from './';
 `;
 
 const reportTextSortedAlphabetically = 'The imports should be sorted alphabetically';
+
+const getImportOrder = (context) => {
+  const defaultImportOrder = [
+    reactPathPattern,
+    externalLibsPathsPattern,
+    companyPathsPattern,
+    projectAbsolutePathsPattern,
+    relativePathsPattern,
+  ];
+
+  const EXTERNAL_LIBS_PATHS_INDEX = 1;
+  const PROJECT_ABSOLUTE_PATHS_INDEX = 3;
+
+  context.options.forEach((option) => {
+    if (option !== null && typeof(option) === 'object' && !Array.isArray(option)) {
+      if (option.projectAbsolutePaths && Array.isArray(option.projectAbsolutePaths)) {
+        let newPathsUnion;
+        let newProjectAbsolutePaths;
+        if (Boolean(option.override)) {
+          newPathsUnion = [companyPaths]
+            .concat(relativePaths)
+            .concat(option.projectAbsolutePaths);
+          newProjectAbsolutePaths = option.projectAbsolutePaths;
+        } else {
+          const additionalProjectAbsolutePaths = option.projectAbsolutePaths.filter((path) => !projectAbsolutePaths.includes(path));
+          newPathsUnion = pathsUnion.concat(additionalProjectAbsolutePaths);
+          newProjectAbsolutePaths = projectAbsolutePaths.concat(additionalProjectAbsolutePaths);
+        }
+
+        const newExternalLibsPathsPattern = new RegExp(`^(?!(${newPathsUnion.join('|')}))`);
+        const newProjectAbsolutePathsPattern = new RegExp(`^(${newProjectAbsolutePaths.join('|')})`);
+
+        defaultImportOrder[EXTERNAL_LIBS_PATHS_INDEX] = newExternalLibsPathsPattern;
+        defaultImportOrder[PROJECT_ABSOLUTE_PATHS_INDEX] = newProjectAbsolutePathsPattern;
+      }
+    }
+  });
+
+  return defaultImportOrder;
+}
 
 module.exports = {
   meta: {
@@ -49,6 +78,8 @@ module.exports = {
   create: function customImportOrder(context) {
     let pastImportPosition = -1;
     let lastImportValue = '';
+
+    const importOrder = getImportOrder(context);
 
     return {
       ImportDeclaration(node) {
