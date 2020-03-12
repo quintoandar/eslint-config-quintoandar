@@ -26,6 +26,10 @@ const reportTextOutOfOrder = `
 
 const reportTextSortedAlphabetically = 'The imports should be sorted alphabetically';
 
+const isOptionValid = (option) => option !== null && typeof(option) === 'object' && !Array.isArray(option);
+
+const hasProjectAbsolutePathsOption = ({ projectAbsolutePaths }) => projectAbsolutePaths && Array.isArray(projectAbsolutePaths);
+
 const getImportOrder = (context) => {
   const defaultImportOrder = [
     reactPathPattern,
@@ -39,20 +43,22 @@ const getImportOrder = (context) => {
   const PROJECT_ABSOLUTE_PATHS_INDEX = 3;
 
   context.options.forEach((option) => {
-    if (option !== null && typeof(option) === 'object' && !Array.isArray(option)) {
-      if (option.projectAbsolutePaths && Array.isArray(option.projectAbsolutePaths)) {
-        let newPathsUnion;
+    if (isOptionValid(option)) {
+      if (hasProjectAbsolutePathsOption(option)) {
+        const newProjectAbsolutePathsSet = new Set(option.projectAbsolutePaths);
+
         let newProjectAbsolutePaths;
+
         if (Boolean(option.override)) {
-          newPathsUnion = [companyPaths]
-            .concat(relativePaths)
-            .concat(option.projectAbsolutePaths);
-          newProjectAbsolutePaths = option.projectAbsolutePaths;
+          newProjectAbsolutePaths = Array.from(newProjectAbsolutePathsSet);
         } else {
-          const additionalProjectAbsolutePaths = option.projectAbsolutePaths.filter((path) => !projectAbsolutePaths.includes(path));
-          newPathsUnion = pathsUnion.concat(additionalProjectAbsolutePaths);
-          newProjectAbsolutePaths = projectAbsolutePaths.concat(additionalProjectAbsolutePaths);
+          const projectAbsolutePathsSet = new Set(projectAbsolutePaths);
+          newProjectAbsolutePaths = Array.from(new Set([...projectAbsolutePathsSet, ...newProjectAbsolutePathsSet]));
         }
+
+        const newPathsUnion = [companyPaths]
+            .concat(relativePaths)
+            .concat(newProjectAbsolutePaths);
 
         const newExternalLibsPathsPattern = new RegExp(`^(?!(${newPathsUnion.join('|')}))`);
         const newProjectAbsolutePathsPattern = new RegExp(`^(${newProjectAbsolutePaths.join('|')})`);
