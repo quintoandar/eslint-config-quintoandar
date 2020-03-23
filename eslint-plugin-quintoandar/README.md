@@ -198,6 +198,89 @@ Just add the code below in your rules array:
 "quintoandar/no-block-party-waffle-menu-import": 2,
 ```
 
+### QuintoAndar custom import order
+
+Enforces the following custom import order:
+
+1 - `react` import;
+
+2 - external libs imports;
+
+3 - `@quintoandar` imports;
+
+4 - projects absolute imports;
+
+5 - projects relative imports;
+
+#### Why
+
+This rule aims in the direction of standardizing our code style. Beyond that it makes easier to find the imports.
+
+#### How to use it
+
+Just add the code below in your rules array:
+
+```js
+"quintoandar/quintoandar-import-order": 2,
+```
+
+#### Options
+
+##### projectAbsolutePaths
+
+With the `projectAbsolutePaths` option you can pass extra paths to be evaluated as absolute paths from the project. You can use it adding the following to your rules array:
+
+```js
+'quintoandar/quintoandar-import-order': [
+  2,
+  {
+    projectAbsolutePaths: ['experiments/'],
+  },
+],
+```
+
+With the above configuration, all imports from `experiments` will be considered internal imports from the project:
+
+```js
+  // Start with external libs
+  import something from 'external-lib/something-a';
+  import anotherThing from 'external-lib/something-b';
+
+  // Then projects absolute imports
+  import SomeInternalComponent from 'components/SomeComponent';
+  import SomeInternalContainer from 'containers/SomeContainer';
+  import SomeExperiment from 'experiments/someExperiment';
+  import someInternalHelper from 'helpers/someHelper';
+  import someInternalUtil from 'utils/someUtil';
+```
+
+You can pass the `override` option too:
+
+```js
+'quintoandar/quintoandar-import-order': [
+  2,
+  {
+    override: true,
+    projectAbsolutePaths: ['components', 'containers', 'experiments/'],
+  },
+],
+```
+
+This way the default absolute paths (`components/`, `containers/`, `helpers/` or `utils/`) are overwritten. So the code above would not valid anymore, but the following would be:
+
+```js
+  // Start with external libs
+  import something from 'external-lib/something-a';
+  import anotherThing from 'external-lib/something-b';
+  import someInternalHelper from 'helpers/someHelper';
+  import someInternalUtil from 'utils/someUtil';
+
+  // Then projects absolute imports
+  import SomeInternalComponent from 'components/SomeComponent';
+  import SomeInternalContainer from 'containers/SomeContainer';
+  import SomeExperiment from 'experiments/someExperiment';
+```
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [CHANGELOG.md](https://github.com/quintoandar/eslint-config-quintoandar/blob/master/eslint-plugin-quintoandar/CHANGELOG.md)
