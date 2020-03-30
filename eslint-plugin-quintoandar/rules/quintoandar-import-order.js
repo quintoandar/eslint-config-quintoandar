@@ -2,7 +2,7 @@ const companyPaths = '@quintoandar/';
 
 const projectAbsolutePaths = ['components/', 'containers/', 'helpers/', 'utils/'];
 
-const relativePaths = ['\\.\\.', '\\.'];
+const relativePaths = ['\\.'];
 
 const pathsUnion = [companyPaths]
   .concat(relativePaths)
