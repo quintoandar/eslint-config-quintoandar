@@ -49,6 +49,8 @@ const validCodeAllImports = `
   import someInternalHelper from 'helpers/someHelper';
   import someInternalUtil from 'utils/someUtil';
 
+  import SomethingFromIndex from '.';
+  import SomethingFromIndexAbove from '..';
   import SomethingFromRelativePath from '../../Something';
   import AnotherThingFromRelativePath from '../AnotherThing';
   import AndOneMoreThingFromRelativePath from './AndOneMoreThing';
@@ -64,6 +66,7 @@ const validCodeSomeImports = `
   import someInternalHelper from 'helpers/someHelper';
   import someInternalUtil from 'utils/someUtil';
 
+  import SomethingFromIndexAbove from '..';
   import SomethingFromRelativePath from '../../Something';
   import AndOneMoreThingFromRelativePath from './AndOneMoreThing';
 `;
