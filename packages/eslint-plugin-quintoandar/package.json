@@ -1,7 +1,7 @@
 {
   "name": "@quintoandar/eslint-plugin-quintoandar",
   "author": "Quinto Andar",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "An eslint-plugin for PWA-Tenants custom rules",
   "license": "MIT",
   "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-plugin-quintoandar#readme",

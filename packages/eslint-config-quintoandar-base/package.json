@@ -1,7 +1,7 @@
 {
   "name": "@quintoandar/eslint-config-quintoandar-base",
   "author": "Quinto Andar",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "ESLint Shareable Config for QuintoAndar's Base JS projects",
   "license": "ISC",
   "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-base#readme",

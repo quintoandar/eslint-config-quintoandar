@@ -1,7 +1,7 @@
 {
   "name": "@quintoandar/eslint-config-quintoandar-pwa",
   "author": "Quinto Andar",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "ESLint Shareable Config for QuintoAndar's PWAs",
   "license": "ISC",
   "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-pwa#readme",
@@ -38,11 +38,11 @@
     "eslint": "3.11.1",
     "eslint-config-airbnb": "13.0.0",
     "eslint-config-airbnb-base": "10.0.1",
+    "eslint-config-quintoandar-base": "1.0.0",
     "eslint-import-resolver-webpack": "0.8.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-quintoandar": "^1.0.0",
-    "eslint-config-quintoandar-base": "1.0.0",
     "eslint-plugin-react": "6.7.1"
   },
   "devDependencies": {
