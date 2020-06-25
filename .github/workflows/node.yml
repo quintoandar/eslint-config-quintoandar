@@ -19,15 +19,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: "0"
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
 
     - run: npm ci
+    - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
     - run: git branch
     - run: git log
-    # - run: npm run commitlint:ci
+    - run: npm run commitlint:ci
 
   pre-build:
     runs-on: ubuntu-latest
