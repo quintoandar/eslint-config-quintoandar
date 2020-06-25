@@ -1,0 +1,41 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Github Package
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  version:
+    # Prevent infinite push loops caused by lerna
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: [12.x]
+      - run: export GH_TOKEN=$${GITHUB_TOKEN}
+      - run: git config --global user.name "Homes Bot"
+      - run: git config --global user.email "homes@quintoandar.com.br"
+      - run: git fetch --tags origin master
+      - run: npm run version -- --yes
+      # - run: npm run version -- --yes --create-release github
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  publish:
+    # Prevent infinite push loops caused by lerna
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: [12.x]
+      - run: echo //npm.pkg.github.com/:_authToken=$${GITHUB_TOKEN}  >> ~/.npmrc
+      - run: npm run release -- --yes
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -1,0 +1,16 @@
+{
+  "extends": "./index.js",
+  "rules": {
+    "comma-dangle": 0,
+    "prefer-destructuring": 0
+  },
+  "overrides": [
+    {
+      "files": ["*-test.js", "app.js", "app/*/*.js"],
+      "rules": {
+        "quintoandar/no-theme-import": "off",
+        "quintoandar/no-themeprovider-import": "off"
+      }
+    }
+  ]
+}

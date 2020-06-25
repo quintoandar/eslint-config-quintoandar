@@ -1,0 +1,72 @@
+{
+  "name": "@quintoandar/eslint-config-quintoandar-pwa",
+  "author": "Quinto Andar",
+  "version": "0.0.0",
+  "description": "ESLint Shareable Config for QuintoAndar's PWAs",
+  "license": "ISC",
+  "homepage": "https://github.com/quintoandar/eslint-config-quintoandar/tree/master/eslint-config-quintoandar-pwa#readme",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 10"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "CHANGELOG.md",
+    "rules"
+  ],
+  "keywords": [
+    "eslint",
+    "sharable-config",
+    "quintoandar",
+    "PWA"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quintoandar/eslint-config-quintoandar.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --coverage",
+    "test:watch": "jest --watchAll"
+  },
+  "peerDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "3.11.1",
+    "eslint-config-airbnb": "13.0.0",
+    "eslint-config-airbnb-base": "10.0.1",
+    "eslint-import-resolver-webpack": "0.8.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-quintoandar": "^1.0.0",
+    "eslint-config-quintoandar-base": "1.0.0",
+    "eslint-plugin-react": "6.7.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "3.11.1",
+    "eslint-config-airbnb": "13.0.0",
+    "eslint-config-airbnb-base": "10.0.1",
+    "eslint-config-quintoandar-base": "1.0.0",
+    "eslint-import-resolver-webpack": "0.8.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-quintoandar": "^1.0.0",
+    "eslint-plugin-react": "6.7.1",
+    "jest": "^23.4.1"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "testRegex": "tests/.*\\.test\\.js"
+  }
+}

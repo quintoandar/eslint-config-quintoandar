@@ -1,0 +1,37 @@
+{
+  "name": "eslint-config-quintoandar",
+  "author": "QuintoAndar",
+  "version": "0.0.0",
+  "homepage": "https://github.com/quintoandar/eslint-config-quintoandar#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quintoandar/eslint-config-quintoandar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quintoandar/eslint-config-quintoandar/issues"
+  },
+  "engines": {
+    "npm": ">=6.11.3",
+    "node": ">=12.15.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "commitlint": "commitlint",
+    "commitlint:ci": "commitlint --from origin/master",
+    "bootstrap": "lerna bootstrap --hoist",
+    "version": "lerna version --conventional-commits",
+    "release": "lerna publish from-package",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "lint:ci": "lint-staged",
+    "postinstall": "npm run bootstrap"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "husky": "^4.2.1",
+    "lerna": "^3.20.2"
+  }
+}
