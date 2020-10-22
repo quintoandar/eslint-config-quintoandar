@@ -1,16 +1,17 @@
-const DimensPath = 'assets/values/dimens';
+const notAllowedDimensPath = /^.*(assets\/values|deprecated)\/(dimens)/;
 
 const reportText = `
   Do not import Dimens.
-  Use material-ui's Box component instead. (block-party/components/Box)
+  Use cozy's Box component instead. (@quintoandar/cozy-core/Box)
+  For more info, check:
+  https://cozy.quintoandar.com.br/?path=/docs/components-box--base-example
   https://material-ui.com/system/spacing/
 `;
 
 module.exports = function noDimensImport(context) {
-  const checkString = (node, string) => node.indexOf(string) >= 0;
   return {
     ImportDeclaration(node) {
-      if (checkString(node.source.value, DimensPath)) {
+      if (node.source.value.match(notAllowedDimensPath)) {
         context.report({
           node,
           message: reportText,
