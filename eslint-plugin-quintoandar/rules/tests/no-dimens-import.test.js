@@ -22,7 +22,9 @@ const parserOptions = {
 
 const reportText = `
   Do not import Dimens.
-  Use material-ui's Box component instead. (block-party/components/Box)
+  Use cozy's Box component instead. (@quintoandar/cozy-core/Box)
+  For more info, check:
+  https://cozy.quintoandar.com.br/?path=/docs/components-box--base-example
   https://material-ui.com/system/spacing/
 `;
 
@@ -31,13 +33,16 @@ const errors = [{ reportText }];
 const ruleTester = new RuleTester({ parserOptions });
 ruleTester.run('no-dimens-import', rule, {
   valid: [{
-    code: "import Box from 'block-party/components/Box'"
+    code: "import Box from '@quintoandar/cozy-core/Box'"
   }],
   invalid: [{
     code: "import Dimens from 'block-party/assets/values/dimens'",
     errors,
   }, {
     code: "import Dimens from 'assets/values/dimens'",
+    errors,
+  }, {
+    code: "import Dimens from 'deprecated/dimens'",
     errors,
   }]
 });
