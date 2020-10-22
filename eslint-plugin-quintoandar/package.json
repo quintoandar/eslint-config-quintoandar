@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-quintoandar",
-  "version": "1.10.1",
+  "version": "1.11.0",
   "description": "An eslint-plugin for PWA-Tenants custom rules",
   "main": "index.js",
   "scripts": {
